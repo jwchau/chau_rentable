@@ -2,6 +2,12 @@
 const axios = require('axios');
 const parseString = require('xml2js').parseString;
 
+// helper function for outputing to local file
+const fs = require('fs')
+const writeMe = (data) => {
+  fs.writeFile('out.txt', data, err => { if (err) throw err })
+}
+
 // function for calling fetch; returns a promise
 async function getXML(url) {
   return axios.get(url)
@@ -46,4 +52,7 @@ promise
     })
   })
   // display properties after all the parsing and extraction
-  .then(() => console.log(properties))
+  .then(() => {
+    console.log(properties)
+    writeMe(properties)
+  })
