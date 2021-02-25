@@ -5,7 +5,7 @@ const parseString = require('xml2js').parseString;
 // helper function for outputing to local file
 const fs = require('fs')
 const writeMe = (data) => {
-  fs.writeFile('out.txt', data, err => { if (err) throw err })
+  fs.writeFile('out.txt', JSON.stringify(data), err => { if (err) throw err })
 }
 
 // function for calling fetch; returns a promise
