@@ -1,1 +1,2 @@
-# chau_rentable
+# Rentable Coding Test
+## John Chau
